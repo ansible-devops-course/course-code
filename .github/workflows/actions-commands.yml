@@ -20,6 +20,5 @@ jobs:
                 else
                 echo "::notice::Disk space ok: $space"
                 fi
-            - name: Build Spring Boot app
-              run: |
-                mvn clean package 
+            - name: print env variable
+              run: $GITHUB_ENV                
