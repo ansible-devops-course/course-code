@@ -10,3 +10,8 @@ jobs:
               run: |
                   npm -v
                   node -v
+    windows-job:
+        runs-on: windows-latest
+        steps:
+            - name: echo a message on Windows
+              run: echo "This is running on a Windows runner!"
