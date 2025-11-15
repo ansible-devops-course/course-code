@@ -1,0 +1,11 @@
+name: worflow-command
+on: [push]
+jobs:
+    commands-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Debug step
+              run: |
+                echo "::notice::Starting build process"
+                echo "::warning::Disk usage high"
+                echo "::error::Build failed - missing file"
