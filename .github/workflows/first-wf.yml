@@ -1,0 +1,12 @@
+name: First Workflow
+on: [push]
+jobs:
+    run-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a message
+              run: echo "This is my first GitHub Actions workflow!"
+            - name: multi-line script
+              run: |
+                  npm -v
+                  node -v
