@@ -9,3 +9,15 @@ jobs:
                 echo "::notice::Starting build process"
                 echo "::warning::Disk usage high"
                 echo "::error::Build failed - missing file"
+            
+            - name: Check Disk Space
+              run: |
+                space=$(df -h / | tail -1 | awk '{print $4}')
+                if [[ "$space" == "0G" ]]; then
+                echo "::error::No disk space left!"
+                elif [[ "$space" < "2G" ]]; then
+                echo "::warning::Low disk space: $space"
+                else
+                echo "::notice::Disk space ok: $space"
+                fi
+
