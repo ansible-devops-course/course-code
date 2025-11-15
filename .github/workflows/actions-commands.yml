@@ -22,5 +22,4 @@ jobs:
                 fi
             - name: Build Spring Boot app
               run: |
-                echo "::notice::Starting Maven Build 🚀"
-                mvn clean package || echo "::error::Build failed - check Maven logs"
+                mvn clean package 
