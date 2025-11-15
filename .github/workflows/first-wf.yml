@@ -11,6 +11,7 @@ jobs:
                   npm -v
                   node -v
     windows-job:
+        needs: run-job
         runs-on: windows-latest
         steps:
             - name: echo a message on Windows
