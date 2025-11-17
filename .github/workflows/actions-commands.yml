@@ -21,4 +21,9 @@ jobs:
                 echo "::notice::Disk space ok: $space"
                 fi
             - name: print env variable
-              run: $GITHUB_ENV                
+              run: $GITHUB_ENV   
+                       
+            - name: View context attributes
+              uses: actions/github-script@v8
+              with:
+                script: console.log(context)    
