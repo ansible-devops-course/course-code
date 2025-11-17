@@ -4,5 +4,11 @@ jobs:
     checkout-actions:
         runs-on: ubuntu-latest
         steps:
+          - name: Before checkout
+            run: ls -la
+            
           - name: checout Repository
             uses: actions/checkout@v4
+
+          - name: After checkout
+            run: ls -la            
