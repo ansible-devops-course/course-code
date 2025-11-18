@@ -1,5 +1,8 @@
 name: worflow-command
-on: [push]
+on: 
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
 jobs:
     checkout-actions:
         runs-on: ubuntu-latest
@@ -21,4 +24,6 @@ jobs:
           - name: After checkout
             run: ls -la  
             
+          - name: get context
+            run: context
           
