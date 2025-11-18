@@ -27,10 +27,10 @@ jobs:
           - name: get context
             run: echo $context
 
-          - name: Setup Python
-            uses: actions/setup-python@v6.0.0
-            with:
-              python-version: '3.13' 
+          # - name: Setup Python
+          #   uses: actions/setup-python@v6.0.0
+          #   with:
+          #     python-version: '3.13' 
           
           - name: run a python script
             run: python app.py
