@@ -35,4 +35,7 @@ jobs:
           - name: run a python script
             run: python app.py
 
+          - name: find python version
+            run: python --version
+
           
