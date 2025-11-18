@@ -1,0 +1,9 @@
+name: Events workflow
+on: [push]
+
+jobs:
+    get-events:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print events
+              run: echo "${{ github }}"
