@@ -1,6 +1,16 @@
 name: manual_workflow
 on:
   workflow_dispatch:
+    inputs:
+        environment:
+            description: "Select the environment"
+            required: true
+            default: "dev"
+            type: choice
+            options:
+              - dev
+              - staging
+              - production
 
 jobs:
     first_job_with_manual_trigger:
