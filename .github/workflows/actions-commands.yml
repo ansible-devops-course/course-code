@@ -4,11 +4,15 @@ jobs:
     checkout-actions:
         runs-on: ubuntu-latest
         steps:
+          - name: commit info
+            run: echo "Commit made by ${{ github.actor }} with commit id ${{ github.sha }} on repo ${{github.ref}}"
           - name: Before checkout
             run: ls -la
-            
+
           - name: checout Repository
             uses: actions/checkout@v4
 
           - name: After checkout
-            run: ls -la            
+            run: ls -la  
+            
+          
