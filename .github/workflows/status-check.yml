@@ -9,6 +9,9 @@ jobs:
             - name: Run a one-line script
               run: echo "Hello, world!"
             
+            - name: sleep for 30 seconds
+              run: sleep 30
+            
             - name: runs only if previous job is successful
               if: success()
               run: echo "This job runs only if the previous job is successful."
