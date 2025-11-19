@@ -8,6 +8,9 @@ jobs:
         steps:
             - name: Run a one-line script
               run: echo "Hello, world!"
+
+            - name: exit with error
+              run: exit 1
             
             - name: sleep for 30 seconds
               run: sleep 30
