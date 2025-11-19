@@ -1,0 +1,16 @@
+name: setting env workflow
+on: [push]
+run-name: setting env workflow run
+
+jobs:
+    set-env-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: set env variable
+              run: echo "MY_NAME=Thiyagarajan" >> $GITHUB_ENV
+
+            - name: print env variable
+              run: echo "My name is $MY_NAME"
+
+            - name: print env variable in context format
+              run: echo "$GITHUB_ENV"              
