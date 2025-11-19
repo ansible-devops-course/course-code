@@ -7,10 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: set env variable
-              run: echo "MY_NAME=Thiyagarajan" >> $GITHUB_ENV
+              run: echo "name=Thiyagarajan" >> $GITHUB_ENV
 
             - name: print env variable
-              run: echo "My name is $MY_NAME"
+              run: echo "My name is $name"
 
             - name: print env variable in context format
               run: echo "$GITHUB_ENV"              
