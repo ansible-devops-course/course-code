@@ -1,16 +1,16 @@
-name: setting env workflow
+name: check secrettoken
 on: [push]
-run-name: setting env workflow run
+run-name: check secrettoken run
+
+env:
+    SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
 
 jobs:
-    set-env-job:
+    check-secret:
         runs-on: ubuntu-latest
         steps:
-            - name: set env variable
-              run: echo "name=Thiyagarajan" >> $GITHUB_ENV
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                token: ${{ env.SECRET_TOKEN }}
 
-            - name: print env variable
-              run: echo "My name is $name"
-
-            - name: print env variable in context format
-              run: echo "$GITHUB_ENV"              
