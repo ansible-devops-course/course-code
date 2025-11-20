@@ -1,11 +1,23 @@
 name: dyamic workflow
-on: [push]
+on: 
+    workflow_dispatch:
+        inputs:
+            os:
+                description: 'Operating System'
+                required: true
+                type: string
+                default: 'ubuntu-latest,windows-latest'
+            node:
+                description: 'Node.js Version'
+                required: true
+                type: string
+                default: '14,16,18'
 
 jobs:
     build:
         strategy:
             matrix:
-                os: [ubuntu-latest, windows-latest, macos-latest]
+                os: [ubuntu-latest, windows-latest]
                 node: [14, 16, 18]
         runs-on: ${{ matrix.os }}
         continue-on-error: true
