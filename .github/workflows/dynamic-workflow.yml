@@ -21,8 +21,9 @@ jobs:
               run: |
                     python - << 'EOF'
                     os_output="${{ github.event.inputs.os }}"
-                    echo "OS_OUTPUT=os_output.split(',')" >> $GITHUB_OUTPUT
+                    os=os_output.split(',')
                     EOF
+                    echo "OS_OUTPUT=os" >> $GITHUB_OUTPUT
             - name: print os output
               run: echo "$OS_OUTPUT"
     # build:
