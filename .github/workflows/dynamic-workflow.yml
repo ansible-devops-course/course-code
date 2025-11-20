@@ -14,19 +14,29 @@ on:
                 default: '14,16,18'
 
 jobs:
-    build:
-        strategy:
-            matrix:
-                os: [ubuntu-latest, windows-latest]
-                node: [14, 16, 18]
-        runs-on: ${{ matrix.os }}
-        continue-on-error: true
+    prepare-matrix:
+        runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+            - name: Run inline Python
+              run: |
+                    python - << 'EOF'
+                    print("Hello from Python")
+                    x = 10
+                    print(x * 5)
+                    EOF
+    # build:
+    #     strategy:
+    #         matrix:
+    #             os: [ubuntu-latest, windows-latest]
+    #             node: [14, 16, 18]
+    #     runs-on: ${{ matrix.os }}
+    #     continue-on-error: true
+    #     steps:
+    #         - name: Checkout code
+    #           uses: actions/checkout@v2
         
-            - name: Set up Node.js ${{ matrix.node }}
-              uses: actions/setup-node@v2
-              with:
-                 node-version: ${{ matrix.node }}
+    #         - name: Set up Node.js ${{ matrix.node }}
+    #           uses: actions/setup-node@v2
+    #           with:
+    #              node-version: ${{ matrix.node }}
     
