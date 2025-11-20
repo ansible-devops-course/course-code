@@ -2,19 +2,10 @@ name: status check workflow
 on: [push]
 run-name: status check workflow run
 
-env:
-    secret_name: ${{ secrets.MY_SECRET }}
-    name: ${{ vars.NAME}}
-
 jobs:
     jobs-1:
         runs-on: ubuntu-latest
         steps:
-            - name: print secret
-              run: echo "${{ env.secret_name }}"
-            
-            - name: print var
-              run: echo "${{ env.name }}"
 
             - name: Run a one-line script
               run: echo "Hello, world!"
