@@ -5,12 +5,14 @@ run-name: check secrettoken run
 env:
     SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
 
+
 jobs:
     check-secret:
+        permissions: {}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
               with:
                 token: ${{ env.SECRET_TOKEN }}
-                
+
