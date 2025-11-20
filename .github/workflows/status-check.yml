@@ -4,6 +4,7 @@ run-name: status check workflow run
 
 jobs:
     jobs-1:
+        continue-on-error: true
         runs-on: ubuntu-latest
         steps:
 
@@ -12,7 +13,7 @@ jobs:
 
             - name: exit with error
               run: exit 1
-              continue-on-error: true
+            #   continue-on-error: true
             
             - name: sleep for 30 seconds
               run: sleep 30
