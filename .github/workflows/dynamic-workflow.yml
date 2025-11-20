@@ -21,8 +21,10 @@ jobs:
               run: |
                     python - << 'EOF'
                     os_output="${{ github.event.inputs.os }}"
-                    print(os_output.split(','))
+                    echo "OS_OUTPUT=os_output.split(',')" >> $GITHUB_OUTPUT
                     EOF
+            - name: print os output
+              run: echo "$OS_OUTPUT"
     # build:
     #     strategy:
     #         matrix:
