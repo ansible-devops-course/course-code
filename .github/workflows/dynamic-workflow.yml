@@ -23,7 +23,7 @@ jobs:
                     os_output="${{ github.event.inputs.os }}"
                     os=os_output.split(',')
                     EOF
-                    echo "OS_OUTPUT=os" >> $GITHUB_OUTPUT
+                    echo "OS_OUTPUT=os" >> $GITHUB_ENV
             - name: print os output
               run: echo "$OS_OUTPUT"
     # build:
