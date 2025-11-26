@@ -1,4 +1,4 @@
-name: Node Cache Demo
+name: Node Cache Demo - Big Project
 
 on: [push]
 
@@ -15,9 +15,6 @@ jobs:
         with:
           node-version: 18
 
-      # --------------------------------------
-      # 🍪 IMPORTANT: Enable NPM Cache
-      # --------------------------------------
       - name: Cache NPM dependencies
         uses: actions/cache@v3
         id: npm-cache
@@ -27,9 +24,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
-      # If cache found this step becomes super fast!
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Run Node App
-        run: npm start
+      - name: Build App
+        run: npm run build
