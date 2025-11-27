@@ -19,3 +19,9 @@ jobs:
                 python3 --version
                 python3 ./app.py
                 cat /etc/os-release
+
+            - name: docker in steps
+              uses: docker://python:3.14.0-slim-trixie
+              with:
+                    entrypoint: python3
+                    args: ./app.py -v 
