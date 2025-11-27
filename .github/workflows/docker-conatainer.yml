@@ -23,5 +23,5 @@ jobs:
             - name: docker in steps
               uses: docker://python:3.14.0-slim-trixie
               with:
-                    entrypoint: python3
+                    # entrypoint: python3
                     args: ./app.py --version
