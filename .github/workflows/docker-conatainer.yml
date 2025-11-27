@@ -1,5 +1,5 @@
 name: docker-container
-on: [workflow_dispatch]
+on: [push]
 
 
 jobs:
@@ -24,4 +24,4 @@ jobs:
               uses: docker://python:3.14.0-slim-trixie
               with:
                     entrypoint: python3
-                    args: ./app.py -v 
+                    args: ./app.py --version
