@@ -9,4 +9,4 @@ jobs:
             image: python:3.15.0a2-trixie
         steps:
             - name: Check out python version
-              run: --version
+              run: python3 --version
