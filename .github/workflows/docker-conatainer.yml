@@ -15,4 +15,6 @@ jobs:
               run: python3 --version
             
             - name: execute a script
-              run: python3 ./app.py
+              run: |
+                python3 --version
+                python3 ./app.py
